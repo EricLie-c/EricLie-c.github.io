@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://ericlie-c.github.io/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ericlie-c.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-一日二十题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/01/22/%E4%B8%80%E6%97%A5%E4%BA%8C%E5%8D%81%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2025-01-22T08:35:00.123Z" itemprop="datePublished">2025-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1>一日二十题 Day 1</h1>
+<p></p>
+<p>***</p>
+<p></p>
+<h2 id="题1：57-插入区间">题1：57. 插入区间</h2>
+<p></p>
+<p>给你一个** 无重叠的*** ，*按照区间起始端点排序的区间列表 <code>intervals</code>，其中 <code>intervals[i] = [starti, endi]</code> 表示第 <code>i</code> 个区间的开始和结束，并且 <code>intervals</code> 按照 <code>starti</code> 升序排列。同样给定一个区间 <code>newInterval = [start, end]</code> 表示另一个区间的开始和结束。</p>
+<p>在 <code>intervals</code> 中插入区间 <code>newInterval</code>，使得 <code>intervals</code> 依然按照 <code>starti</code> 升序排列，且区间之间不重叠（如果有必要的话，可以合并区间）。</p>
+<p>返回插入之后的 <code>intervals</code>。</p>
+<p><strong>注意</strong> 你不需要原地修改 <code>intervals</code>。你可以创建一个新数组然后返回它。</p>
+<p></p>
+<p>示例1：</p>
+<blockquote>
+<p>输入：<code>intervals = [[1,3],[6,9]], newInterval = [2,5]</code></p>
+</blockquote>
+<blockquote>
+<p>输出：<code>[[1,5],[6,9]]</code></p>
+</blockquote>
+<p>示例2：</p>
+<blockquote>
+<p>输入：<code>intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]</code></p>
+</blockquote>
+<blockquote>
+<p>输出：<code>[[1,2],[3,10],[12,16]]</code></p>
+</blockquote>
+<blockquote>
+<p>解释：这是因为新的区间 <code>[4,8]</code> 与 <code>[3,5],[6,7],[8,10]</code> 重叠。</p>
+</blockquote>
+<p></p>
+<p><strong>提示：</strong></p>
+<ul>
+<li>
+<p><code>0 &lt;= intervals.length &lt;= 104</code></p>
+</li>
+<li>
+<p><code>intervals[i].length == 2</code></p>
+</li>
+<li>
+<p><code>0 &lt;= starti &lt;= endi &lt;= 105</code></p>
+</li>
+<li>
+<p><code>intervals</code> 根据 <code>starti</code> 按 <strong>升序</strong> 排列</p>
+</li>
+<li>
+<p><code>newInterval.length == 2</code></p>
+</li>
+<li>
+<p><code>0 &lt;= start &lt;= end &lt;= 105</code></p>
+</li>
+</ul>
+<p></p>
+<h3 id="题解：">题解：</h3>
+<p></p>
+<p>方法一：最正常的思路。</p>
+<p></p>
+<p>如果要得到加入后互不重叠的区间集合，那么就应该找出所有和新加入区间重叠的区间进行融合，最后合并即可。</p>
+<p>可能会有些疑问：<strong>为什么只需要找出和新区间重叠的区间即可？其他不重叠的要不要管？</strong></p>
+<p></p>
+<p>事实上，由于原来的区间集合是互不相交的，这就保证了<br>
+<strong>与新区间有相交的所有区间融合后与剩余的区间不相交</strong></p>
+<p>具体的证明可以分类讨论用<em>反证法</em>   这里不加讨论。</p>
+<p></p>
+<p>剩下的事情就简单了。只需要牢记重叠的三种情况，一一判断即可不重不漏。</p>
+<p>比较需要注意的是一些corner cases：</p>
+<ol>
+<li>
+<p><code>intervals</code>的 <code>size()</code> 为0的情况</p>
+</li>
+<li>
+<p>没有相交区间的情况。此时并不是直接加进去就行了，要注意顺序。因此要排序一下。</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; insert(vector&lt;vector&lt;int&gt;&gt;&amp; intervals,</span><br><span class="line">                               vector&lt;int&gt;&amp; newInterval) &#123;</span><br><span class="line">        if(intervals.size()==0)&#123;</span><br><span class="line">            return &#123;newInterval&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;int&gt; indexs;</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt; res;</span><br><span class="line">        for (int i = 0; i &lt; intervals.size(); i++) &#123;</span><br><span class="line">            if (newInterval[0] &lt;= intervals[i][1] &amp;&amp;</span><br><span class="line">                newInterval[0] &gt;= intervals[i][0])</span><br><span class="line">                indexs.push_back(i);</span><br><span class="line">            else if (newInterval[1] &lt;= intervals[i][1] &amp;&amp;</span><br><span class="line">                     newInterval[1] &gt;= intervals[i][0])</span><br><span class="line">                indexs.push_back(i);</span><br><span class="line">            else if (newInterval[1] &gt;= intervals[i][1] &amp;&amp;</span><br><span class="line">                     newInterval[0] &lt;= intervals[i][0])</span><br><span class="line">                indexs.push_back(i);</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; indexs.size(); i++) &#123;</span><br><span class="line">            newInterval[0] = min(newInterval[0], intervals[indexs[i]][0]);</span><br><span class="line">            newInterval[1] = max(newInterval[1], intervals[indexs[i]][1]);</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; intervals.size(); i++) &#123;</span><br><span class="line">            if(indexs.empty())&#123;</span><br><span class="line">                res = intervals;</span><br><span class="line">                res.push_back(newInterval);</span><br><span class="line">                sort(res.begin(), res.end());</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            if (i != indexs[0])</span><br><span class="line">                res.push_back(intervals[i]);</span><br><span class="line">            else &#123;</span><br><span class="line">                res.push_back(newInterval);</span><br><span class="line">                i = indexs.back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果需要原地方法，其实也可以。用<code>insert</code>然后<code>erase</code>掉当前迭代器以后的元素即可。</p>
+<p></p>
+<p>***</p>
+<p></p>
+<h2 id="题2-：54-螺旋矩阵">题2 ：54. 螺旋矩阵</h2>
+<p></p>
+<p>给你一个 <code>m</code> 行 <code>n</code> 列的矩阵 <code>matrix</code> ，请按照 <strong>顺时针螺旋顺序</strong> ，返回矩阵中的所有元素。</p>
+<p></p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg" alt=""></p>
+<p></p>
+<blockquote>
+<p>输入：matrix = [[1,2,3],[4,5,6],[7,8,9]]</p>
+</blockquote>
+<blockquote>
+<p>输出：[1,2,3,6,9,8,7,4,5]</p>
+</blockquote>
+<p></p>
+<p><strong>示例 2：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/13/spiral.jpg" alt=""></p>
+<p></p>
+<blockquote>
+<p>输入：matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]</p>
+</blockquote>
+<blockquote>
+<p>输出：[1,2,3,4,8,12,11,10,9,5,6,7]</p>
+</blockquote>
+<p></p>
+<p><strong>提示：</strong></p>
+<ul>
+<li>
+<p><code>m == matrix.length</code></p>
+</li>
+<li>
+<p><code>n == matrix[i].length</code></p>
+</li>
+<li>
+<p><code>1 &lt;= m, n &lt;= 10</code></p>
+</li>
+<li>
+<p><code>-100 &lt;= matrix[i][j] &lt;= 100</code></p>
+</li>
+</ul>
+<p></p>
+<h3 id="题解：-2">题解：</h3>
+<h3 id="模拟法">模拟法</h3>
+<p>简单来说，就是走之前预测一下能不能走，不能走就避开。然后避开有几种方向，这取决于在什么方向上遇到了阻碍。分类讨论即可。</p>
+<p>阻碍分为两种，一种是* 边界 <em>阻碍，一种是</em> 已经过*<br>
+阻碍。把经过的位置置为1，方便后续判断出第二种阻碍。</p>
+<p></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; spiralOrder(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        // 依然是模拟法</span><br><span class="line">        // 走之前先预测一下能不能走，不能走就避开</span><br><span class="line">        bool m[11][11];</span><br><span class="line">        vector&lt;int&gt; res;</span><br><span class="line">        int i = 0;</span><br><span class="line">        int j = 0;</span><br><span class="line">        int trace = 0;</span><br><span class="line">        int cnt = matrix.size() * matrix[0].size();</span><br><span class="line">        while (cnt--) &#123;</span><br><span class="line">            // 如果往右并且没经过</span><br><span class="line">            if (m[i][j] != 1 &amp;&amp; trace == 0) &#123;</span><br><span class="line">                res.push_back(matrix[i][j]);</span><br><span class="line">                m[i][j] = 1;</span><br><span class="line">                if (j == matrix[i].size() - 1) &#123;</span><br><span class="line">                    i++;</span><br><span class="line">                    trace = 1;</span><br><span class="line">                &#125; else if (m[i][j + 1] == 1) &#123;</span><br><span class="line">                    i++;</span><br><span class="line">                    trace = 1;</span><br><span class="line">                &#125; else</span><br><span class="line">                    j++;</span><br><span class="line">            &#125;</span><br><span class="line">            // 如果往下</span><br><span class="line">            else if (m[i][j] != 1 &amp;&amp; trace == 1) &#123;</span><br><span class="line">                res.push_back(matrix[i][j]);</span><br><span class="line">                m[i][j] = 1;</span><br><span class="line">                if (i == matrix.size() - 1) &#123;</span><br><span class="line">                    j--;</span><br><span class="line">                    trace = 2;</span><br><span class="line">                &#125; else if (m[i + 1][j] == 1) &#123;</span><br><span class="line">                    j--;</span><br><span class="line">                    trace = 2;</span><br><span class="line">                &#125; else</span><br><span class="line">                    i++;</span><br><span class="line">            &#125;</span><br><span class="line">            // 如果往左</span><br><span class="line">            else if (m[i][j] != 1 &amp;&amp; trace == 2) &#123;</span><br><span class="line">                res.push_back(matrix[i][j]);</span><br><span class="line">                m[i][j] = 1;</span><br><span class="line">                if (j == 0) &#123;</span><br><span class="line">                    i--;</span><br><span class="line">                    trace = 3;</span><br><span class="line">                &#125; else if (m[i][j - 1] == 1) &#123;</span><br><span class="line">                    i--;</span><br><span class="line">                    trace = 3;</span><br><span class="line">                &#125; else</span><br><span class="line">                    j--;</span><br><span class="line">            &#125;</span><br><span class="line">            // 如果往上</span><br><span class="line">            else if (m[i][j] != 1 &amp;&amp; trace == 3) &#123;</span><br><span class="line">                res.push_back(matrix[i][j]);</span><br><span class="line">                m[i][j] = 1;</span><br><span class="line">                if (m[i - 1][j] == 1) &#123;</span><br><span class="line">                    j++;</span><br><span class="line">                    trace = 0;</span><br><span class="line">                &#125; else</span><br><span class="line">                    i--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p></p>
+<p>***</p>
+<p></p>
+<h2 id="题3：48-旋转图像">题3：48. 旋转图像</h2>
+<p></p>
+<p>给定一个 *n *× <em>n</em> 的二维矩阵 <code>matrix</code> 表示一个图像。请你将图像顺时针旋转 90<br>
+度。</p>
+<p>你必须在 <strong>原地</strong><br>
+旋转图像，这意味着你需要直接修改输入的二维矩阵。**请不要 **使用另一个矩阵来旋转图像。</p>
+<p></p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/08/28/mat1.jpg" alt=""></p>
+<blockquote>
+<p>输入：matrix = [[1,2,3],[4,5,6],[7,8,9]]</p>
+</blockquote>
+<blockquote>
+<p>输出：[[7,4,1],[8,5,2],[9,6,3]]</p>
+</blockquote>
+<p></p>
+<p><strong>示例 2：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/08/28/mat2.jpg" alt=""></p>
+<blockquote>
+<p>输入：matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]</p>
+</blockquote>
+<blockquote>
+<p>输出：[[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]</p>
+</blockquote>
+<p></p>
+<p><strong>提示：</strong></p>
+<ul>
+<li>
+<p><code>n == matrix.length == matrix[i].length</code></p>
+</li>
+<li>
+<p><code>1 &lt;= n &lt;= 20</code></p>
+</li>
+<li>
+<p><code>-1000 &lt;= matrix[i][j] &lt;= 1000</code></p>
+</li>
+</ul>
+<p></p>
+<h3 id="题解：-3">题解：</h3>
+<p></p>
+<p>其实，经过简单的思考，我们就能知道麻烦的点在哪——**原地。**这就要求我们用temp来进行中间值的转储。但是这就有一个问题，这个temp不能一直存着，最好存了马上就能用，不然后续会很麻烦。</p>
+<p></p>
+<p>所以，四个方位的元素要在一次操作中完成交换。</p>
+<p></p>
+<p>确定了这样一个基本的思路后，我们就要考虑应该枚举哪些元素，因为显然并不是全部元素都需要被枚举。</p>
+<p></p>
+<p>对于n为偶数的情形而言，划分是简单的，划为四个方块即可：</p>
+<p></p>
+<p><img src="https://assets.leetcode-cn.com/solution-static/48/1.png" alt=""></p>
+<p></p>
+<p></p>
+<p>对于n为奇数的情形，就稍微复杂一点，但思路是一致的。以中间块为核心，呈风筝型：</p>
+<p></p>
+<p><img src="https://assets.leetcode-cn.com/solution-static/48/2.png" alt=""></p>
+<p></p>
+<p>至于是不是只能这么划分，我其实没想明白…但我认为必须要是四等分的。</p>
+<p></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    // 因为要原地修改，原地修改就要面临被修改的位置的中间值要保留的问题。</span><br><span class="line">    // 于是，用一个temp中转。</span><br><span class="line">    // 然后，易知只需要4次。</span><br><span class="line">    // 最后，我们还需知道需要枚举哪些元素（最难想）</span><br><span class="line">    // 对于n为偶数，可以分为四大块，枚举右上块即可</span><br><span class="line">    // 对于n为奇数，则形似风筝。以核心块为分界，上半部分的矩形：其宽为(n-1)/2，</span><br><span class="line">    // 其长为n-(n-1)/2 = (n+1)/2</span><br><span class="line">    // 比较像人的做法是分类讨论，但是力扣官方解法是把他们统一了。</span><br><span class="line">    // 因为n为偶数时，(n+1)/2 = n/2；n为奇数时，(n-1)/2 = n/2</span><br><span class="line">    // 但是，n为奇数时，列数必须是(n+1)/2；n为偶数时，行数必须是n/2而不能是(n-1)/2</span><br><span class="line">    // 剩下的就是举例子找规律：行数转为列数(n-行数-1)；原列数转为行数(直接转不需要计算)</span><br><span class="line">public:</span><br><span class="line">    void rotate(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        int n = matrix.size();</span><br><span class="line">        int temp;</span><br><span class="line">        for (int i = 0; i &lt; matrix.size() / 2; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; (matrix.size() + 1) / 2; j++) &#123;</span><br><span class="line">                temp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[n - j - 1][i];</span><br><span class="line">                matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1];</span><br><span class="line">                matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1];</span><br><span class="line">                matrix[j][n - i - 1] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">// 方法二就是先水平翻转，再主对角线翻转。</span><br><span class="line">// 记住每一步要枚举的元素：第一步就是上半矩形，第二部分就是上三角(行是1到n，列是行到n)</span><br></pre></td></tr></table></figure>
+<p></p>
+<p>***</p>
+<p></p>
+<h2 id="题4：289-生命游戏">题4：289. 生命游戏</h2>
+<p></p>
+<p>根据 <strong>百度百科</strong> ， <strong>生命游戏</strong> ，简称为 <strong>生命</strong> ，是英国数学家约翰·何顿·康威在<br>
+1970 年发明的细胞自动机。</p>
+<p>给定一个包含 <code>m × n</code> 个格子的面板，每一个格子都可以看成是一个细胞。每个细胞都具有一个初始状态： <code>1</code> 即为 <strong>活细胞</strong> （live），或 <code>0</code> 即为 <strong>死细胞</strong> （dead）。每个细胞与其八个相邻位置（水平，垂直，对角线）的细胞都遵循以下四条生存定律：</p>
+<ol>
+<li>
+<p>如果活细胞周围八个位置的活细胞数少于两个，则该位置活细胞死亡；</p>
+</li>
+<li>
+<p>如果活细胞周围八个位置有两个或三个活细胞，则该位置活细胞仍然存活；</p>
+</li>
+<li>
+<p>如果活细胞周围八个位置有超过三个活细胞，则该位置活细胞死亡；</p>
+</li>
+<li>
+<p>如果死细胞周围正好有三个活细胞，则该位置死细胞复活；</p>
+</li>
+</ol>
+<p>下一个状态是通过将上述规则同时应用于当前状态下的每个细胞所形成的，其中细胞的出生和死亡是 <strong>同时</strong> 发生的。给你 <code>m x n</code> 网格面板 <code>board</code> 的当前状态，返回下一个状态。</p>
+<p>给定当前 <code>board</code> 的状态，<strong>更新</strong> <code>board</code> 到下一个状态。</p>
+<p><strong>注意</strong> 你不需要返回任何东西。</p>
+<p></p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/12/26/grid1.jpg" alt=""></p>
+<blockquote>
+<p>输入：board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]<br>
+输出：[[0,0,0],[1,0,1],[0,1,1],[0,1,0]]</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/12/26/grid2.jpg" alt=""></p>
+<blockquote>
+<p>输入：board = [[1,1],[1,0]]<br>
+输出：[[1,1],[1,1]]</p>
+</blockquote>
+<p></p>
+<p><strong>提示：</strong></p>
+<ul>
+<li>
+<p><code>m == board.length</code></p>
+</li>
+<li>
+<p><code>n == board[i].length</code></p>
+</li>
+<li>
+<p><code>1 &lt;= m, n &lt;= 25</code></p>
+</li>
+<li>
+<p><code>board[i][j]</code> 为 <code>0</code> 或 <code>1</code></p>
+</li>
+</ul>
+<p></p>
+<p><strong>进阶：</strong></p>
+<ul>
+<li>你可以使用原地算法解决本题吗？请注意，面板上所有格子需要同时被更新：你不能先更新某些格子，然后使用它们的更新后的值再更新其他格子。</li>
+</ul>
+<p></p>
+<h3 id="题解：-4">题解：</h3>
+<p>如果不需要原地的话，想法就很直接，利用一个辅助数组即可。枚举元素时统计周围的八个元素*（注意边界情况）*<br>
+即可。枚举的话也不必想太多，i和j分别从-1到1依次枚举即可，碰到0,0就跳过。</p>
+<p></p>
+<p>如果需要原地的话，思维稍微转个弯也可以了。即，既要能够即时修改元素，又要保留上一个状态的信息。那怎么办？答案呼之欲出。遍历两遍。第一遍遍历时，原来为1变化为0的记为2，原来为0变化为1的记为-1，如此即可分别。第二遍遍历时，把-1和2恢复为1和0即可。</p>
+<p></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    // 统计周围八个位置的活细胞数量 -&gt; i-1,j i-1,j-1 i-1,j+1 i,j-1 i,j+1 i+1,j-1</span><br><span class="line">    // i+1,j i+1,j+1 想统一遍历的话，可以用一个二维的三位数组 location[3][3] 这样只要i+u,j+v即可</span><br><span class="line">    // ↑ 其实根本没必要，遍历location数组时下标已经“隐含”了这种“周围”的关系 减1即可</span><br><span class="line">    // 同时发生意味着可能需要辅助数组</span><br><span class="line">    // 但是有原地方法？</span><br><span class="line">public:</span><br><span class="line">    void gameOfLife(vector&lt;vector&lt;int&gt;&gt;&amp; board) &#123;</span><br><span class="line">        int m = board.size();</span><br><span class="line">        int n = board[0].size();</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt; temp(m, vector&lt;int&gt;(n, 0));</span><br><span class="line">        for (int k = 0; k &lt; m; k++) &#123;</span><br><span class="line">            for (int q = 0; q &lt; n; q++) &#123;</span><br><span class="line">                int sum = 0;</span><br><span class="line">                for (int i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">                    for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">                        if (i == 1 &amp;&amp; j == 1) &#123;</span><br><span class="line">                            continue;</span><br><span class="line">                        &#125;</span><br><span class="line">                        if ((k + i - 1) &gt;= m || (k + i - 1) &lt; 0 ||</span><br><span class="line">                            (q + j - 1) &gt;= n || (q + j - 1) &lt; 0) // 边界检测</span><br><span class="line">                            continue;</span><br><span class="line">                        if (board[k + i - 1][q + j - 1] == 1)</span><br><span class="line">                            sum++;</span><br><span class="line">                        if (sum &gt; 3) &#123;</span><br><span class="line">                            temp[k][q] = 0;</span><br><span class="line">                            break; // 其实break不break都没差</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                if (sum &lt; 2)</span><br><span class="line">                    temp[k][q] = 0;</span><br><span class="line">                else if (sum == 3)</span><br><span class="line">                    temp[k][q] = 1;</span><br><span class="line">                else if (sum == 2 &amp;&amp; board[k][q] == 1)</span><br><span class="line">                    temp[k][q] = 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        board = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">// 原地方法有点神奇了... 采用了“额外状态”</span><br><span class="line">// 即如果过去是死的，如今是活的，赋值-1，如果过去是活的，如今是死的，赋值2</span><br><span class="line">// 这样遍历两遍也能知道结果</span><br><span class="line">// 我的评价是意料之外，情理之中</span><br></pre></td></tr></table></figure>
+<p></p>
+<p>***</p>
+<p></p>
+<h2 id="题5：-49-字母异位词分组">题5： 49. 字母异位词分组</h2>
+<p></p>
+<p>给你一个字符串数组，请你将 <strong>字母异位词</strong> 组合在一起。可以按任意顺序返回结果列表。</p>
+<p><strong>字母异位词</strong> 是由重新排列源单词的所有字母得到的一个新单词。</p>
+<p></p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p>输入: <code>strs = [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;]</code><br>
+输出:<code> [[&quot;bat&quot;],[&quot;nat&quot;,&quot;tan&quot;],[&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;]]</code></p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p>输入: <code>strs = [&quot;&quot;]</code><br>
+输出:<code> [[&quot;&quot;]]</code></p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p>输入: <code>strs = [&quot;a&quot;]</code><br>
+输出: <code>[[&quot;a&quot;]]</code></p>
+</blockquote>
+<p></p>
+<p><strong>提示：</strong></p>
+<ul>
+<li>
+<p><code>1 &lt;= strs.length &lt;= 104</code></p>
+</li>
+<li>
+<p><code>0 &lt;= strs[i].length &lt;= 100</code></p>
+</li>
+<li>
+<p><code>strs[i]</code> 仅包含小写字母</p>
+</li>
+</ul>
+<p></p>
+<h3 id="题解：-5">题解：</h3>
+<p><code>方法一： 哈希表+4次方</code></p>
+<p>对于一个单词，如果我们想把它做成键值对的形式，即一样的字母即映射到同一个位置，最显然的办法是用<code>ascii</code>码值的累加。但是这样重码率会太高，导致不同字母也会在很偶然的情况映射到一个位置。因此，使用平方。但依然有重码，最后提到了4次方才通过。</p>
+<p>其实平方应该也行，那么键值对就应该是int-&gt;string，每当重码就检查一遍是不是真的异位。但这样成本无疑很大。</p>
+<p></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">// 为解决先后顺序问题，必须检测到没出现过就马上加入到res中，不然后面顺序就乱了，会有2 1 1 2的情况</span><br><span class="line">// 为解决碰撞问题，4次方，然后开long long</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; groupAnagrams(vector&lt;string&gt;&amp; strs) &#123;</span><br><span class="line">        unordered_map&lt;int, int&gt; hash;</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; res;</span><br><span class="line">        int a[10001] = &#123;0&#125;;</span><br><span class="line">        int it = 1;</span><br><span class="line">        for (int i = 0; i &lt; strs.size(); i++) &#123;</span><br><span class="line">            long long sum = 0;</span><br><span class="line">            for (int j = 0; j &lt; strs[i].length(); j++) &#123;</span><br><span class="line">                sum += pow(strs[i][j],4);</span><br><span class="line">            &#125;</span><br><span class="line">            // sum *= 10;</span><br><span class="line">            if (hash.find(sum) == hash.end()) &#123;</span><br><span class="line">                hash[sum] = i;</span><br><span class="line">                vector&lt;string&gt; temp;</span><br><span class="line">                temp.push_back(strs[i]);</span><br><span class="line">                res.push_back(temp);</span><br><span class="line">                a[i] = it;</span><br><span class="line">                it++;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                a[i] = a[hash[sum]];</span><br><span class="line">                res[a[hash[sum]]-1].push_back(strs[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">// 方法二是计数，即像以前一样，故技重施，用个26位的数组来统计字频</span><br><span class="line">// 然后，可以用这个26位数组作为哈希表的键。值和方法一一样，都是vector&lt;string&gt;数组</span><br></pre></td></tr></table></figure>
+<p></p>
+<h3 id="方法二：哈希表-排序">方法二：哈希表+排序</h3>
+<p>这是标准答案的方法。这基于一个简单的事实：字母异位词经过排序后结果相同。那么就可以用排序后的结果string作为哈希表的键，这样就轻松保证独一无二了。</p>
+<p>并且，答案的方法也比较简练，直接把vector&lt;string&gt;数组作为值，最后遍历哈希表合成即可。</p>
+<p></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; groupAnagrams(vector&lt;string&gt;&amp; strs) &#123;</span><br><span class="line">        unordered_map&lt;string, vector&lt;string&gt;&gt; mp;</span><br><span class="line">        for (string&amp; str: strs) &#123;</span><br><span class="line">            string key = str;</span><br><span class="line">            sort(key.begin(), key.end());</span><br><span class="line">            mp[key].emplace_back(str);</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; ans;</span><br><span class="line">        for (auto it = mp.begin(); it != mp.end(); ++it) &#123;</span><br><span class="line">            ans.emplace_back(it-&gt;second);</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p></p>
+<h3 id="方法三：字母表统计字频">方法三：字母表统计字频</h3>
+<p>这基于一个事实：字母异位词在字母表中统计的字频相同。以字母表为键即可独一无二。但这个实现上C++不直接支持，实现上有点麻烦。</p>
+<p></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; groupAnagrams(vector&lt;string&gt;&amp; strs) &#123;</span><br><span class="line">        // 自定义对 array&lt;int, 26&gt; 类型的哈希函数</span><br><span class="line">        auto arrayHash = [fn = hash&lt;int&gt;&#123;&#125;] (const array&lt;int, 26&gt;&amp; arr) -&gt; size_t &#123;</span><br><span class="line">            return accumulate(arr.begin(), arr.end(), 0u, [&amp;](size_t acc, int num) &#123;</span><br><span class="line">                return (acc &lt;&lt; 1) ^ fn(num);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        unordered_map&lt;array&lt;int, 26&gt;, vector&lt;string&gt;, decltype(arrayHash)&gt; mp(0, arrayHash);</span><br><span class="line">        for (string&amp; str: strs) &#123;</span><br><span class="line">            array&lt;int, 26&gt; counts&#123;&#125;;</span><br><span class="line">            int length = str.length();</span><br><span class="line">            for (int i = 0; i &lt; length; ++i) &#123;</span><br><span class="line">                counts[str[i] - &#x27;a&#x27;] ++;</span><br><span class="line">            &#125;</span><br><span class="line">            mp[counts].emplace_back(str);</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; ans;</span><br><span class="line">        for (auto it = mp.begin(); it != mp.end(); ++it) &#123;</span><br><span class="line">            ans.emplace_back(it-&gt;second);</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p></p>
+<p>***</p>
+<p></p>
+<h2 id="题6：1-两数之和">题6：1. 两数之和</h2>
+<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 **和为目标值 **<code>target</code> <br>
+的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：<code>nums = [2,7,11,15], target = 9</code><br>
+输出：<code>[0,1]</code><br>
+解释：因为 <code>nums[0] + nums[1] == 9 </code>，返回 <code>[0, 1] </code>。</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：<code>nums = [3,2,4], target = 6</code><br>
+输出：<code>[1,2]</code></p>
+</blockquote>
+<p><strong>示例 3：</strong></p>
+<blockquote>
+<p>输入：<code>nums = [3,3], target = 6</code><br>
+输出：<code>[0,1]</code></p>
+</blockquote>
+<p></p>
+<p><strong>提示：</strong></p>
+<ul>
+<li>
+<p><code>2 &lt;= nums.length &lt;= 104</code></p>
+</li>
+<li>
+<p><code>-109 &lt;= nums[i] &lt;= 109</code></p>
+</li>
+<li>
+<p><code>-109 &lt;= target &lt;= 109</code></p>
+</li>
+<li>
+<p><strong>只会存在一个有效答案</strong></p>
+</li>
+</ul>
+<p></p>
+<p>**进阶：**你可以想出一个时间复杂度小于 <code>O(n2)</code> 的算法吗？</p>
+<p></p>
+<h3 id="题解：-6">题解：</h3>
+<p>方法一我就不说了，太简单</p>
+<p>主要提一下方法二。其实方法二是对方法一的改良。毕竟方法一就是枚举<br>
+<code>target-nums[i]</code>然后再从头枚举看看有没有吻合的。这双重枚举造成了$$O(n^{2})$$<br>
+的时间复杂度。</p>
+<p>解决办法是哈希表。预先把每个数字放到哈希表上，后续第二重枚举就可以抛弃了，此时复杂度仅为$$O(2x)$$</p>
+<p></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123;</span><br><span class="line">        unordered_map&lt;int, int&gt; hashtable;</span><br><span class="line">        for (int i = 0; i &lt; nums.size(); ++i) &#123;</span><br><span class="line">            auto it = hashtable.find(target - nums[i]);</span><br><span class="line">            if (it != hashtable.end()) &#123;</span><br><span class="line">                return &#123;it-&gt;second, i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            hashtable[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        return &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p></p>
+<h2 id="题7：128-最长连续序列">题7：128. 最长连续序列</h2>
+<p></p>
+<p>给定一个未排序的整数数组 <code>nums</code> ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。</p>
+<p>请你设计并实现时间复杂度为 <code>O(n)</code>* *的算法解决此问题。</p>
+<p></p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：nums = [100,4,200,1,3,2]<br>
+输出：4<br>
+解释：最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4。</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：nums = [0,3,7,2,5,8,4,6,0,1]<br>
+输出：9</p>
+</blockquote>
+<p></p>
+<p><strong>提示：</strong></p>
+<ul>
+<li>
+<p><code>0 &lt;= nums.length &lt;= 105</code></p>
+</li>
+<li>
+<p><code>-109 &lt;= nums[i] &lt;= 109</code></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ericlie-c.github.io/2025/01/22/%E4%B8%80%E6%97%A5%E4%BA%8C%E5%8D%81%E9%A2%98/" data-id="cm67nns3k0002ccp6a3ic0isr" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/01/22/%E4%B8%80%E6%97%A5%E4%BA%8C%E5%8D%81%E9%A2%98/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
