@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>Blog of Eric Lie</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="一日二十题 Day 1  ***  题1：57. 插入区间  给你一个** 无重叠的*** ，*按照区间起始端点排序的区间列表 intervals，其中 intervals[i] &#x3D; [starti, endi] 表示第 i 个区间的开始和结束，并且 intervals 按照 starti 升序排列。同样给定一个区间 newInterval &#x3D; [start, end] 表示另一个区间的开始和结束">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ericlie-c.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一日二十题 Day 1    题1：57. 插入区间  给你一个** 无重叠的*** ，*按照区间起始端点排序的区间列表 intervals，其中 intervals[i] &#x3D; [starti, endi] 表示第 i 个区间的开始和结束，并且 intervals 按照 starti 升序排列。同样给定一个区间 newInterval &#x3D; [start, end] 表示另一个区间的开始和结束。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Blog of Eric Lie">
+<meta property="og:title" content="一日二十题">
 <meta property="og:url" content="https://ericlie-c.github.io/2025/01/22/%E4%B8%80%E6%97%A5%E4%BA%8C%E5%8D%81%E9%A2%98/index.html">
 <meta property="og:site_name" content="Blog of Eric Lie">
-<meta property="og:description" content="一日二十题 Day 1  ***  题1：57. 插入区间  给你一个** 无重叠的*** ，*按照区间起始端点排序的区间列表 intervals，其中 intervals[i] &#x3D; [starti, endi] 表示第 i 个区间的开始和结束，并且 intervals 按照 starti 升序排列。同样给定一个区间 newInterval &#x3D; [start, end] 表示另一个区间的开始和结束">
-<meta property="og:locale">
+<meta property="og:description" content="一日二十题 Day 1    题1：57. 插入区间  给你一个** 无重叠的*** ，*按照区间起始端点排序的区间列表 intervals，其中 intervals[i] &#x3D; [starti, endi] 表示第 i 个区间的开始和结束，并且 intervals 按照 starti 升序排列。同样给定一个区间 newInterval &#x3D; [start, end] 表示另一个区间的开始和结束。">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/11/13/spiral.jpg">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/08/28/mat1.jpg">
@@ -21,80 +35,181 @@
 <meta property="og:image" content="https://assets.leetcode-cn.com/solution-static/48/2.png">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/12/26/grid1.jpg">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/12/26/grid2.jpg">
-<meta property="article:published_time" content="2025-01-22T08:35:00.123Z">
-<meta property="article:modified_time" content="2025-01-22T08:41:16.924Z">
+<meta property="article:published_time" content="2025-01-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-01-22T10:29:10.778Z">
 <meta property="article:author" content="Eric Lie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg">
-  
-    <link rel="alternate" href="/atom.xml" title="Blog of Eric Lie" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="canonical" href="https://ericlie-c.github.io/2025/01/22/%E4%B8%80%E6%97%A5%E4%BA%8C%E5%8D%81%E9%A2%98/">
 
-  
-  
-<meta name="generator" content="Hexo 7.3.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Blog of Eric Lie</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ericlie-c.github.io"></form>
-      </div>
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>一日二十题 | Blog of Eric Lie</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
-</header>
 
-      <div class="outer">
-        <section id="main"><article id="post-一日二十题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/01/22/%E4%B8%80%E6%97%A5%E4%BA%8C%E5%8D%81%E9%A2%98/" class="article-date">
-  <time class="dt-published" datetime="2025-01-22T08:35:00.123Z" itemprop="datePublished">2025-01-22</time>
-</a>
-    
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog of Eric Lie</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
   </div>
-  <div class="article-inner">
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ericlie-c.github.io/2025/01/22/%E4%B8%80%E6%97%A5%E4%BA%8C%E5%8D%81%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Eric Lie">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog of Eric Lie">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          一日二十题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-01-22 00:00:00 / 修改时间：18:29:10" itemprop="dateCreated datePublished" datetime="2025-01-22T00:00:00+08:00">2025-01-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">LeetCode刷题笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
     
     
-    <div class="e-content article-entry" itemprop="articleBody">
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h1>一日二十题 Day 1</h1>
+        <p></p>
+<h1>一日二十题 Day 1</h1>
 <p></p>
-<p>***</p>
+<hr>
 <p></p>
 <h2 id="题1：57-插入区间">题1：57. 插入区间</h2>
 <p></p>
@@ -152,7 +267,7 @@
 <p></p>
 <p>事实上，由于原来的区间集合是互不相交的，这就保证了<br>
 <strong>与新区间有相交的所有区间融合后与剩余的区间不相交</strong></p>
-<p>具体的证明可以分类讨论用<em>反证法</em>   这里不加讨论。</p>
+<p>具体的证明可以分类讨论用<em>反证法</em> 这里不加讨论。</p>
 <p></p>
 <p>剩下的事情就简单了。只需要牢记重叠的三种情况，一一判断即可不重不漏。</p>
 <p>比较需要注意的是一些corner cases：</p>
@@ -164,10 +279,10 @@
 <p>没有相交区间的情况。此时并不是直接加进去就行了，要注意顺序。因此要排序一下。</p>
 </li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; insert(vector&lt;vector&lt;int&gt;&gt;&amp; intervals,</span><br><span class="line">                               vector&lt;int&gt;&amp; newInterval) &#123;</span><br><span class="line">        if(intervals.size()==0)&#123;</span><br><span class="line">            return &#123;newInterval&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;int&gt; indexs;</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt; res;</span><br><span class="line">        for (int i = 0; i &lt; intervals.size(); i++) &#123;</span><br><span class="line">            if (newInterval[0] &lt;= intervals[i][1] &amp;&amp;</span><br><span class="line">                newInterval[0] &gt;= intervals[i][0])</span><br><span class="line">                indexs.push_back(i);</span><br><span class="line">            else if (newInterval[1] &lt;= intervals[i][1] &amp;&amp;</span><br><span class="line">                     newInterval[1] &gt;= intervals[i][0])</span><br><span class="line">                indexs.push_back(i);</span><br><span class="line">            else if (newInterval[1] &gt;= intervals[i][1] &amp;&amp;</span><br><span class="line">                     newInterval[0] &lt;= intervals[i][0])</span><br><span class="line">                indexs.push_back(i);</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; indexs.size(); i++) &#123;</span><br><span class="line">            newInterval[0] = min(newInterval[0], intervals[indexs[i]][0]);</span><br><span class="line">            newInterval[1] = max(newInterval[1], intervals[indexs[i]][1]);</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; intervals.size(); i++) &#123;</span><br><span class="line">            if(indexs.empty())&#123;</span><br><span class="line">                res = intervals;</span><br><span class="line">                res.push_back(newInterval);</span><br><span class="line">                sort(res.begin(), res.end());</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            if (i != indexs[0])</span><br><span class="line">                res.push_back(intervals[i]);</span><br><span class="line">            else &#123;</span><br><span class="line">                res.push_back(newInterval);</span><br><span class="line">                i = indexs.back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="built_in">int</span>&gt;&gt; insert(vector&lt;vector&lt;<span class="built_in">int</span>&gt;&gt;&amp; <span class="built_in">int</span>ervals,</span><br><span class="line">                               vector&lt;<span class="built_in">int</span>&gt;&amp; newInterval) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">int</span>ervals.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;newInterval&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;<span class="built_in">int</span>&gt; indexs;</span><br><span class="line">        vector&lt;vector&lt;<span class="built_in">int</span>&gt;&gt; res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">int</span>ervals.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (newInterval[<span class="number">0</span>] &lt;= <span class="built_in">int</span>ervals[i][<span class="number">1</span>] &amp;&amp;</span><br><span class="line">                newInterval[<span class="number">0</span>] &gt;= <span class="built_in">int</span>ervals[i][<span class="number">0</span>])</span><br><span class="line">                indexs.push_back(i);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (newInterval[<span class="number">1</span>] &lt;= <span class="built_in">int</span>ervals[i][<span class="number">1</span>] &amp;&amp;</span><br><span class="line">                     newInterval[<span class="number">1</span>] &gt;= <span class="built_in">int</span>ervals[i][<span class="number">0</span>])</span><br><span class="line">                indexs.push_back(i);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (newInterval[<span class="number">1</span>] &gt;= <span class="built_in">int</span>ervals[i][<span class="number">1</span>] &amp;&amp;</span><br><span class="line">                     newInterval[<span class="number">0</span>] &lt;= <span class="built_in">int</span>ervals[i][<span class="number">0</span>])</span><br><span class="line">                indexs.push_back(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; indexs.size(); i++) &#123;</span><br><span class="line">            newInterval[<span class="number">0</span>] = min(newInterval[<span class="number">0</span>], <span class="built_in">int</span>ervals[indexs[i]][<span class="number">0</span>]);</span><br><span class="line">            newInterval[<span class="number">1</span>] = max(newInterval[<span class="number">1</span>], <span class="built_in">int</span>ervals[indexs[i]][<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">int</span>ervals.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(indexs.empty())&#123;</span><br><span class="line">                res = <span class="built_in">int</span>ervals;</span><br><span class="line">                res.push_back(newInterval);</span><br><span class="line">                sort(res.begin(), res.end());</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i != indexs[<span class="number">0</span>])</span><br><span class="line">                res.push_back(<span class="built_in">int</span>ervals[i]);</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                res.push_back(newInterval);</span><br><span class="line">                i = indexs.back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>如果需要原地方法，其实也可以。用<code>insert</code>然后<code>erase</code>掉当前迭代器以后的元素即可。</p>
 <p></p>
-<p>***</p>
+<hr>
 <p></p>
 <h2 id="题2-：54-螺旋矩阵">题2 ：54. 螺旋矩阵</h2>
 <p></p>
@@ -215,9 +330,9 @@
 <p>阻碍分为两种，一种是* 边界 <em>阻碍，一种是</em> 已经过*<br>
 阻碍。把经过的位置置为1，方便后续判断出第二种阻碍。</p>
 <p></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; spiralOrder(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        // 依然是模拟法</span><br><span class="line">        // 走之前先预测一下能不能走，不能走就避开</span><br><span class="line">        bool m[11][11];</span><br><span class="line">        vector&lt;int&gt; res;</span><br><span class="line">        int i = 0;</span><br><span class="line">        int j = 0;</span><br><span class="line">        int trace = 0;</span><br><span class="line">        int cnt = matrix.size() * matrix[0].size();</span><br><span class="line">        while (cnt--) &#123;</span><br><span class="line">            // 如果往右并且没经过</span><br><span class="line">            if (m[i][j] != 1 &amp;&amp; trace == 0) &#123;</span><br><span class="line">                res.push_back(matrix[i][j]);</span><br><span class="line">                m[i][j] = 1;</span><br><span class="line">                if (j == matrix[i].size() - 1) &#123;</span><br><span class="line">                    i++;</span><br><span class="line">                    trace = 1;</span><br><span class="line">                &#125; else if (m[i][j + 1] == 1) &#123;</span><br><span class="line">                    i++;</span><br><span class="line">                    trace = 1;</span><br><span class="line">                &#125; else</span><br><span class="line">                    j++;</span><br><span class="line">            &#125;</span><br><span class="line">            // 如果往下</span><br><span class="line">            else if (m[i][j] != 1 &amp;&amp; trace == 1) &#123;</span><br><span class="line">                res.push_back(matrix[i][j]);</span><br><span class="line">                m[i][j] = 1;</span><br><span class="line">                if (i == matrix.size() - 1) &#123;</span><br><span class="line">                    j--;</span><br><span class="line">                    trace = 2;</span><br><span class="line">                &#125; else if (m[i + 1][j] == 1) &#123;</span><br><span class="line">                    j--;</span><br><span class="line">                    trace = 2;</span><br><span class="line">                &#125; else</span><br><span class="line">                    i++;</span><br><span class="line">            &#125;</span><br><span class="line">            // 如果往左</span><br><span class="line">            else if (m[i][j] != 1 &amp;&amp; trace == 2) &#123;</span><br><span class="line">                res.push_back(matrix[i][j]);</span><br><span class="line">                m[i][j] = 1;</span><br><span class="line">                if (j == 0) &#123;</span><br><span class="line">                    i--;</span><br><span class="line">                    trace = 3;</span><br><span class="line">                &#125; else if (m[i][j - 1] == 1) &#123;</span><br><span class="line">                    i--;</span><br><span class="line">                    trace = 3;</span><br><span class="line">                &#125; else</span><br><span class="line">                    j--;</span><br><span class="line">            &#125;</span><br><span class="line">            // 如果往上</span><br><span class="line">            else if (m[i][j] != 1 &amp;&amp; trace == 3) &#123;</span><br><span class="line">                res.push_back(matrix[i][j]);</span><br><span class="line">                m[i][j] = 1;</span><br><span class="line">                if (m[i - 1][j] == 1) &#123;</span><br><span class="line">                    j++;</span><br><span class="line">                    trace = 0;</span><br><span class="line">                &#125; else</span><br><span class="line">                    i--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="keyword">vector</span>&lt;<span class="keyword">int</span>&gt; spiralOrder(<span class="keyword">vector</span>&lt;<span class="keyword">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; <span class="keyword">matrix</span>) &#123;</span><br><span class="line">        <span class="comment">// 依然是模拟法</span></span><br><span class="line">        <span class="comment">// 走之前先预测一下能不能走，不能走就避开</span></span><br><span class="line">        bool m[<span class="number">11</span>][<span class="number">11</span>];</span><br><span class="line">        <span class="keyword">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">trace</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="keyword">matrix</span>.<span class="keyword">size</span>() * <span class="keyword">matrix</span>[<span class="number">0</span>].<span class="keyword">size</span>();</span><br><span class="line">        <span class="keyword">while</span> (cnt--) &#123;</span><br><span class="line">            <span class="comment">// 如果往右并且没经过</span></span><br><span class="line">            <span class="keyword">if</span> (m[i][j] != <span class="number">1</span> &amp;&amp; <span class="keyword">trace</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                res.push_back(<span class="keyword">matrix</span>[i][j]);</span><br><span class="line">                m[i][j] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (j == <span class="keyword">matrix</span>[i].<span class="keyword">size</span>() - <span class="number">1</span>) &#123;</span><br><span class="line">                    i++;</span><br><span class="line">                    <span class="keyword">trace</span> = <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (m[i][j + <span class="number">1</span>] == <span class="number">1</span>) &#123;</span><br><span class="line">                    i++;</span><br><span class="line">                    <span class="keyword">trace</span> = <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                    j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 如果往下</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (m[i][j] != <span class="number">1</span> &amp;&amp; <span class="keyword">trace</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                res.push_back(<span class="keyword">matrix</span>[i][j]);</span><br><span class="line">                m[i][j] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (i == <span class="keyword">matrix</span>.<span class="keyword">size</span>() - <span class="number">1</span>) &#123;</span><br><span class="line">                    j--;</span><br><span class="line">                    <span class="keyword">trace</span> = <span class="number">2</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (m[i + <span class="number">1</span>][j] == <span class="number">1</span>) &#123;</span><br><span class="line">                    j--;</span><br><span class="line">                    <span class="keyword">trace</span> = <span class="number">2</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                    i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 如果往左</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (m[i][j] != <span class="number">1</span> &amp;&amp; <span class="keyword">trace</span> == <span class="number">2</span>) &#123;</span><br><span class="line">                res.push_back(<span class="keyword">matrix</span>[i][j]);</span><br><span class="line">                m[i][j] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (j == <span class="number">0</span>) &#123;</span><br><span class="line">                    i--;</span><br><span class="line">                    <span class="keyword">trace</span> = <span class="number">3</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (m[i][j - <span class="number">1</span>] == <span class="number">1</span>) &#123;</span><br><span class="line">                    i--;</span><br><span class="line">                    <span class="keyword">trace</span> = <span class="number">3</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                    j--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 如果往上</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (m[i][j] != <span class="number">1</span> &amp;&amp; <span class="keyword">trace</span> == <span class="number">3</span>) &#123;</span><br><span class="line">                res.push_back(<span class="keyword">matrix</span>[i][j]);</span><br><span class="line">                m[i][j] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (m[i - <span class="number">1</span>][j] == <span class="number">1</span>) &#123;</span><br><span class="line">                    j++;</span><br><span class="line">                    <span class="keyword">trace</span> = <span class="number">0</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                    i--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p></p>
-<p>***</p>
+<hr>
 <p></p>
 <h2 id="题3：48-旋转图像">题3：48. 旋转图像</h2>
 <p></p>
@@ -276,9 +391,9 @@
 <p></p>
 <p>至于是不是只能这么划分，我其实没想明白…但我认为必须要是四等分的。</p>
 <p></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    // 因为要原地修改，原地修改就要面临被修改的位置的中间值要保留的问题。</span><br><span class="line">    // 于是，用一个temp中转。</span><br><span class="line">    // 然后，易知只需要4次。</span><br><span class="line">    // 最后，我们还需知道需要枚举哪些元素（最难想）</span><br><span class="line">    // 对于n为偶数，可以分为四大块，枚举右上块即可</span><br><span class="line">    // 对于n为奇数，则形似风筝。以核心块为分界，上半部分的矩形：其宽为(n-1)/2，</span><br><span class="line">    // 其长为n-(n-1)/2 = (n+1)/2</span><br><span class="line">    // 比较像人的做法是分类讨论，但是力扣官方解法是把他们统一了。</span><br><span class="line">    // 因为n为偶数时，(n+1)/2 = n/2；n为奇数时，(n-1)/2 = n/2</span><br><span class="line">    // 但是，n为奇数时，列数必须是(n+1)/2；n为偶数时，行数必须是n/2而不能是(n-1)/2</span><br><span class="line">    // 剩下的就是举例子找规律：行数转为列数(n-行数-1)；原列数转为行数(直接转不需要计算)</span><br><span class="line">public:</span><br><span class="line">    void rotate(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        int n = matrix.size();</span><br><span class="line">        int temp;</span><br><span class="line">        for (int i = 0; i &lt; matrix.size() / 2; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; (matrix.size() + 1) / 2; j++) &#123;</span><br><span class="line">                temp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[n - j - 1][i];</span><br><span class="line">                matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1];</span><br><span class="line">                matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1];</span><br><span class="line">                matrix[j][n - i - 1] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">// 方法二就是先水平翻转，再主对角线翻转。</span><br><span class="line">// 记住每一步要枚举的元素：第一步就是上半矩形，第二部分就是上三角(行是1到n，列是行到n)</span><br></pre></td></tr></table></figure>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    <span class="comment">// 因为要原地修改，原地修改就要面临被修改的位置的中间值要保留的问题。</span></span><br><span class="line">    <span class="comment">// 于是，用一个temp中转。</span></span><br><span class="line">    <span class="comment">// 然后，易知只需要4次。</span></span><br><span class="line">    <span class="comment">// 最后，我们还需知道需要枚举哪些元素（最难想）</span></span><br><span class="line">    <span class="comment">// 对于n为偶数，可以分为四大块，枚举右上块即可</span></span><br><span class="line">    <span class="comment">// 对于n为奇数，则形似风筝。以核心块为分界，上半部分的矩形：其宽为(n-1)/2，</span></span><br><span class="line">    <span class="comment">// 其长为n-(n-1)/2 = (n+1)/2</span></span><br><span class="line">    <span class="comment">// 比较像人的做法是分类讨论，但是力扣官方解法是把他们统一了。</span></span><br><span class="line">    <span class="comment">// 因为n为偶数时，(n+1)/2 = n/2；n为奇数时，(n-1)/2 = n/2</span></span><br><span class="line">    <span class="comment">// 但是，n为奇数时，列数必须是(n+1)/2；n为偶数时，行数必须是n/2而不能是(n-1)/2</span></span><br><span class="line">    <span class="comment">// 剩下的就是举例子找规律：行数转为列数(n-行数-1)；原列数转为行数(直接转不需要计算)</span></span><br><span class="line">public:</span><br><span class="line">    void <span class="keyword">rotate</span>(<span class="keyword">vector</span>&lt;<span class="keyword">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; <span class="keyword">matrix</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="keyword">matrix</span>.<span class="keyword">size</span>();</span><br><span class="line">        <span class="keyword">int</span> temp;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">matrix</span>.<span class="keyword">size</span>() / <span class="number">2</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (<span class="keyword">matrix</span>.<span class="keyword">size</span>() + <span class="number">1</span>) / <span class="number">2</span>; j++) &#123;</span><br><span class="line">                temp = <span class="keyword">matrix</span>[i][j];</span><br><span class="line">                <span class="keyword">matrix</span>[i][j] = <span class="keyword">matrix</span>[n - j - <span class="number">1</span>][i];</span><br><span class="line">                <span class="keyword">matrix</span>[n - j - <span class="number">1</span>][i] = <span class="keyword">matrix</span>[n - i - <span class="number">1</span>][n - j - <span class="number">1</span>];</span><br><span class="line">                <span class="keyword">matrix</span>[n - i - <span class="number">1</span>][n - j - <span class="number">1</span>] = <span class="keyword">matrix</span>[j][n - i - <span class="number">1</span>];</span><br><span class="line">                <span class="keyword">matrix</span>[j][n - i - <span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 方法二就是先水平翻转，再主对角线翻转。</span></span><br><span class="line"><span class="comment">// 记住每一步要枚举的元素：第一步就是上半矩形，第二部分就是上三角(行是1到n，列是行到n)</span></span><br></pre></td></tr></table></figure>
 <p></p>
-<p>***</p>
+<hr>
 <p></p>
 <h2 id="题4：289-生命游戏">题4：289. 生命游戏</h2>
 <p></p>
@@ -343,9 +458,9 @@
 <p></p>
 <p>如果需要原地的话，思维稍微转个弯也可以了。即，既要能够即时修改元素，又要保留上一个状态的信息。那怎么办？答案呼之欲出。遍历两遍。第一遍遍历时，原来为1变化为0的记为2，原来为0变化为1的记为-1，如此即可分别。第二遍遍历时，把-1和2恢复为1和0即可。</p>
 <p></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    // 统计周围八个位置的活细胞数量 -&gt; i-1,j i-1,j-1 i-1,j+1 i,j-1 i,j+1 i+1,j-1</span><br><span class="line">    // i+1,j i+1,j+1 想统一遍历的话，可以用一个二维的三位数组 location[3][3] 这样只要i+u,j+v即可</span><br><span class="line">    // ↑ 其实根本没必要，遍历location数组时下标已经“隐含”了这种“周围”的关系 减1即可</span><br><span class="line">    // 同时发生意味着可能需要辅助数组</span><br><span class="line">    // 但是有原地方法？</span><br><span class="line">public:</span><br><span class="line">    void gameOfLife(vector&lt;vector&lt;int&gt;&gt;&amp; board) &#123;</span><br><span class="line">        int m = board.size();</span><br><span class="line">        int n = board[0].size();</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt; temp(m, vector&lt;int&gt;(n, 0));</span><br><span class="line">        for (int k = 0; k &lt; m; k++) &#123;</span><br><span class="line">            for (int q = 0; q &lt; n; q++) &#123;</span><br><span class="line">                int sum = 0;</span><br><span class="line">                for (int i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">                    for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">                        if (i == 1 &amp;&amp; j == 1) &#123;</span><br><span class="line">                            continue;</span><br><span class="line">                        &#125;</span><br><span class="line">                        if ((k + i - 1) &gt;= m || (k + i - 1) &lt; 0 ||</span><br><span class="line">                            (q + j - 1) &gt;= n || (q + j - 1) &lt; 0) // 边界检测</span><br><span class="line">                            continue;</span><br><span class="line">                        if (board[k + i - 1][q + j - 1] == 1)</span><br><span class="line">                            sum++;</span><br><span class="line">                        if (sum &gt; 3) &#123;</span><br><span class="line">                            temp[k][q] = 0;</span><br><span class="line">                            break; // 其实break不break都没差</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                if (sum &lt; 2)</span><br><span class="line">                    temp[k][q] = 0;</span><br><span class="line">                else if (sum == 3)</span><br><span class="line">                    temp[k][q] = 1;</span><br><span class="line">                else if (sum == 2 &amp;&amp; board[k][q] == 1)</span><br><span class="line">                    temp[k][q] = 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        board = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">// 原地方法有点神奇了... 采用了“额外状态”</span><br><span class="line">// 即如果过去是死的，如今是活的，赋值-1，如果过去是活的，如今是死的，赋值2</span><br><span class="line">// 这样遍历两遍也能知道结果</span><br><span class="line">// 我的评价是意料之外，情理之中</span><br></pre></td></tr></table></figure>
+<figure class="highlight stan"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    <span class="comment">// 统计周围八个位置的活细胞数量 -&gt; i-1,j i-1,j-1 i-1,j+1 i,j-1 i,j+1 i+1,j-1</span></span><br><span class="line">    <span class="comment">// i+1,j i+1,j+1 想统一遍历的话，可以用一个二维的三位数组 location[3][3] 这样只要i+u,j+v即可</span></span><br><span class="line">    <span class="comment">// ↑ 其实根本没必要，遍历location数组时下标已经“隐含”了这种“周围”的关系 减1即可</span></span><br><span class="line">    <span class="comment">// 同时发生意味着可能需要辅助数组</span></span><br><span class="line">    <span class="comment">// 但是有原地方法？</span></span><br><span class="line">public:</span><br><span class="line">    <span class="type">void</span> gameOfLife(<span class="type">vector</span>&lt;<span class="type">vector</span>&lt;<span class="type">int</span>&gt;&gt;&amp; board) &#123;</span><br><span class="line">        <span class="type">int</span> m = board.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> n = board[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">vector</span>&lt;<span class="type">vector</span>&lt;<span class="type">int</span>&gt;&gt; temp(m, <span class="type">vector</span>&lt;<span class="type">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; m; k++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> q = <span class="number">0</span>; q &lt; n; q++) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="built_in">sum</span> = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (i == <span class="number">1</span> &amp;&amp; j == <span class="number">1</span>) &#123;</span><br><span class="line">                            <span class="keyword">continue</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span> ((k + i - <span class="number">1</span>) &gt;= m || (k + i - <span class="number">1</span>) &lt; <span class="number">0</span> ||</span><br><span class="line">                            (q + j - <span class="number">1</span>) &gt;= n || (q + j - <span class="number">1</span>) &lt; <span class="number">0</span>) <span class="comment">// 边界检测</span></span><br><span class="line">                            <span class="keyword">continue</span>;</span><br><span class="line">                        <span class="keyword">if</span> (board[k + i - <span class="number">1</span>][q + j - <span class="number">1</span>] == <span class="number">1</span>)</span><br><span class="line">                            <span class="built_in">sum</span>++;</span><br><span class="line">                        <span class="keyword">if</span> (<span class="built_in">sum</span> &gt; <span class="number">3</span>) &#123;</span><br><span class="line">                            temp[k][q] = <span class="number">0</span>;</span><br><span class="line">                            <span class="keyword">break</span>; <span class="comment">// 其实break不break都没差</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">sum</span> &lt; <span class="number">2</span>)</span><br><span class="line">                    temp[k][q] = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">sum</span> == <span class="number">3</span>)</span><br><span class="line">                    temp[k][q] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">sum</span> == <span class="number">2</span> &amp;&amp; board[k][q] == <span class="number">1</span>)</span><br><span class="line">                    temp[k][q] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        board = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 原地方法有点神奇了... 采用了“额外状态”</span></span><br><span class="line"><span class="comment">// 即如果过去是死的，如今是活的，赋值-1，如果过去是活的，如今是死的，赋值2</span></span><br><span class="line"><span class="comment">// 这样遍历两遍也能知道结果</span></span><br><span class="line"><span class="comment">// 我的评价是意料之外，情理之中</span></span><br></pre></td></tr></table></figure>
 <p></p>
-<p>***</p>
+<hr>
 <p></p>
 <h2 id="题5：-49-字母异位词分组">题5： 49. 字母异位词分组</h2>
 <p></p>
@@ -355,12 +470,12 @@
 <p><strong>示例 1:</strong></p>
 <blockquote>
 <p>输入: <code>strs = [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;]</code><br>
-输出:<code> [[&quot;bat&quot;],[&quot;nat&quot;,&quot;tan&quot;],[&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;]]</code></p>
+输出:<code>[[&quot;bat&quot;],[&quot;nat&quot;,&quot;tan&quot;],[&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;]]</code></p>
 </blockquote>
 <p><strong>示例 2:</strong></p>
 <blockquote>
 <p>输入: <code>strs = [&quot;&quot;]</code><br>
-输出:<code> [[&quot;&quot;]]</code></p>
+输出:<code>[[&quot;&quot;]]</code></p>
 </blockquote>
 <p><strong>示例 3:</strong></p>
 <blockquote>
@@ -386,20 +501,20 @@
 <p>对于一个单词，如果我们想把它做成键值对的形式，即一样的字母即映射到同一个位置，最显然的办法是用<code>ascii</code>码值的累加。但是这样重码率会太高，导致不同字母也会在很偶然的情况映射到一个位置。因此，使用平方。但依然有重码，最后提到了4次方才通过。</p>
 <p>其实平方应该也行，那么键值对就应该是int-&gt;string，每当重码就检查一遍是不是真的异位。但这样成本无疑很大。</p>
 <p></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">// 为解决先后顺序问题，必须检测到没出现过就马上加入到res中，不然后面顺序就乱了，会有2 1 1 2的情况</span><br><span class="line">// 为解决碰撞问题，4次方，然后开long long</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; groupAnagrams(vector&lt;string&gt;&amp; strs) &#123;</span><br><span class="line">        unordered_map&lt;int, int&gt; hash;</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; res;</span><br><span class="line">        int a[10001] = &#123;0&#125;;</span><br><span class="line">        int it = 1;</span><br><span class="line">        for (int i = 0; i &lt; strs.size(); i++) &#123;</span><br><span class="line">            long long sum = 0;</span><br><span class="line">            for (int j = 0; j &lt; strs[i].length(); j++) &#123;</span><br><span class="line">                sum += pow(strs[i][j],4);</span><br><span class="line">            &#125;</span><br><span class="line">            // sum *= 10;</span><br><span class="line">            if (hash.find(sum) == hash.end()) &#123;</span><br><span class="line">                hash[sum] = i;</span><br><span class="line">                vector&lt;string&gt; temp;</span><br><span class="line">                temp.push_back(strs[i]);</span><br><span class="line">                res.push_back(temp);</span><br><span class="line">                a[i] = it;</span><br><span class="line">                it++;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                a[i] = a[hash[sum]];</span><br><span class="line">                res[a[hash[sum]]-1].push_back(strs[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">// 方法二是计数，即像以前一样，故技重施，用个26位的数组来统计字频</span><br><span class="line">// 然后，可以用这个26位数组作为哈希表的键。值和方法一一样，都是vector&lt;string&gt;数组</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="comment">// 为解决先后顺序问题，必须检测到没出现过就马上加入到res中，不然后面顺序就乱了，会有2 1 1 2的情况</span></span><br><span class="line"><span class="comment">// 为解决碰撞问题，4次方，然后开long long</span></span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">groupAnagrams</span>(vector&lt;string&gt;&amp; strs) &#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hash;</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; res;</span><br><span class="line">        <span class="type">int</span> a[<span class="number">10001</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="type">int</span> it = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; strs.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; strs[i].<span class="built_in">length</span>(); j++) &#123;</span><br><span class="line">                sum += <span class="built_in">pow</span>(strs[i][j],<span class="number">4</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// sum *= 10;</span></span><br><span class="line">            <span class="keyword">if</span> (hash.<span class="built_in">find</span>(sum) == hash.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                hash[sum] = i;</span><br><span class="line">                vector&lt;string&gt; temp;</span><br><span class="line">                temp.<span class="built_in">push_back</span>(strs[i]);</span><br><span class="line">                res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">                a[i] = it;</span><br><span class="line">                it++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                a[i] = a[hash[sum]];</span><br><span class="line">                res[a[hash[sum]]<span class="number">-1</span>].<span class="built_in">push_back</span>(strs[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 方法二是计数，即像以前一样，故技重施，用个26位的数组来统计字频</span></span><br><span class="line"><span class="comment">// 然后，可以用这个26位数组作为哈希表的键。值和方法一一样，都是vector&lt;string&gt;数组</span></span><br></pre></td></tr></table></figure>
 <p></p>
 <h3 id="方法二：哈希表-排序">方法二：哈希表+排序</h3>
 <p>这是标准答案的方法。这基于一个简单的事实：字母异位词经过排序后结果相同。那么就可以用排序后的结果string作为哈希表的键，这样就轻松保证独一无二了。</p>
 <p>并且，答案的方法也比较简练，直接把vector&lt;string&gt;数组作为值，最后遍历哈希表合成即可。</p>
 <p></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; groupAnagrams(vector&lt;string&gt;&amp; strs) &#123;</span><br><span class="line">        unordered_map&lt;string, vector&lt;string&gt;&gt; mp;</span><br><span class="line">        for (string&amp; str: strs) &#123;</span><br><span class="line">            string key = str;</span><br><span class="line">            sort(key.begin(), key.end());</span><br><span class="line">            mp[key].emplace_back(str);</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; ans;</span><br><span class="line">        for (auto it = mp.begin(); it != mp.end(); ++it) &#123;</span><br><span class="line">            ans.emplace_back(it-&gt;second);</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; groupAnagrams(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs) &#123;</span><br><span class="line">        unordered_map&lt;<span class="built_in">string</span>, <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; mp;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">string</span>&amp; str: strs) &#123;</span><br><span class="line">            <span class="built_in">string</span> <span class="built_in">key</span> = str;</span><br><span class="line">            <span class="built_in">sort</span>(<span class="built_in">key</span>.begin(), <span class="built_in">key</span>.end());</span><br><span class="line">            mp[<span class="built_in">key</span>].emplace_back(str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (auto it = mp.begin(); it != mp.end(); ++it) &#123;</span><br><span class="line">            ans.emplace_back(it-&gt;<span class="built_in">second</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p></p>
 <h3 id="方法三：字母表统计字频">方法三：字母表统计字频</h3>
 <p>这基于一个事实：字母异位词在字母表中统计的字频相同。以字母表为键即可独一无二。但这个实现上C++不直接支持，实现上有点麻烦。</p>
 <p></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; groupAnagrams(vector&lt;string&gt;&amp; strs) &#123;</span><br><span class="line">        // 自定义对 array&lt;int, 26&gt; 类型的哈希函数</span><br><span class="line">        auto arrayHash = [fn = hash&lt;int&gt;&#123;&#125;] (const array&lt;int, 26&gt;&amp; arr) -&gt; size_t &#123;</span><br><span class="line">            return accumulate(arr.begin(), arr.end(), 0u, [&amp;](size_t acc, int num) &#123;</span><br><span class="line">                return (acc &lt;&lt; 1) ^ fn(num);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        unordered_map&lt;array&lt;int, 26&gt;, vector&lt;string&gt;, decltype(arrayHash)&gt; mp(0, arrayHash);</span><br><span class="line">        for (string&amp; str: strs) &#123;</span><br><span class="line">            array&lt;int, 26&gt; counts&#123;&#125;;</span><br><span class="line">            int length = str.length();</span><br><span class="line">            for (int i = 0; i &lt; length; ++i) &#123;</span><br><span class="line">                counts[str[i] - &#x27;a&#x27;] ++;</span><br><span class="line">            &#125;</span><br><span class="line">            mp[counts].emplace_back(str);</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; ans;</span><br><span class="line">        for (auto it = mp.begin(); it != mp.end(); ++it) &#123;</span><br><span class="line">            ans.emplace_back(it-&gt;second);</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">groupAnagrams</span>(vector&lt;string&gt;&amp; strs) &#123;</span><br><span class="line">        <span class="comment">// 自定义对 array&lt;int, 26&gt; 类型的哈希函数</span></span><br><span class="line">        <span class="keyword">auto</span> arrayHash = [fn = hash&lt;<span class="type">int</span>&gt;&#123;&#125;] (<span class="type">const</span> array&lt;<span class="type">int</span>, <span class="number">26</span>&gt;&amp; arr) -&gt; <span class="type">size_t</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">accumulate</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), <span class="number">0u</span>, [&amp;](<span class="type">size_t</span> acc, <span class="type">int</span> num) &#123;</span><br><span class="line">                <span class="built_in">return</span> (acc &lt;&lt; <span class="number">1</span>) ^ <span class="built_in">fn</span>(num);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        unordered_map&lt;array&lt;<span class="type">int</span>, 26&gt;, vector&lt;string&gt;, <span class="keyword">decltype</span>(arrayHash)&gt; <span class="built_in">mp</span>(<span class="number">0</span>, arrayHash);</span><br><span class="line">        <span class="keyword">for</span> (string&amp; str: strs) &#123;</span><br><span class="line">            array&lt;<span class="type">int</span>, 26&gt; counts&#123;&#125;;</span><br><span class="line">            <span class="type">int</span> length = str.<span class="built_in">length</span>();</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; length; ++i) &#123;</span><br><span class="line">                counts[str[i] - <span class="string">&#x27;a&#x27;</span>] ++;</span><br><span class="line">            &#125;</span><br><span class="line">            mp[counts].<span class="built_in">emplace_back</span>(str);</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> it = mp.<span class="built_in">begin</span>(); it != mp.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">            ans.<span class="built_in">emplace_back</span>(it-&gt;second);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p></p>
-<p>***</p>
+<hr>
 <p></p>
 <h2 id="题6：1-两数之和">题6：1. 两数之和</h2>
 <p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 **和为目标值 **<code>target</code> <br>
@@ -410,7 +525,7 @@
 <blockquote>
 <p>输入：<code>nums = [2,7,11,15], target = 9</code><br>
 输出：<code>[0,1]</code><br>
-解释：因为 <code>nums[0] + nums[1] == 9 </code>，返回 <code>[0, 1] </code>。</p>
+解释：因为 <code>nums[0] + nums[1] == 9</code>，返回 <code>[0, 1]</code>。</p>
 </blockquote>
 <p><strong>示例 2：</strong></p>
 <blockquote>
@@ -448,7 +563,9 @@
 的时间复杂度。</p>
 <p>解决办法是哈希表。预先把每个数字放到哈希表上，后续第二重枚举就可以抛弃了，此时复杂度仅为$$O(2x)$$</p>
 <p></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123;</span><br><span class="line">        unordered_map&lt;int, int&gt; hashtable;</span><br><span class="line">        for (int i = 0; i &lt; nums.size(); ++i) &#123;</span><br><span class="line">            auto it = hashtable.find(target - nums[i]);</span><br><span class="line">            if (it != hashtable.end()) &#123;</span><br><span class="line">                return &#123;it-&gt;second, i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            hashtable[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        return &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hashtable;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">auto</span> it = hashtable.<span class="built_in">find</span>(target - nums[i]);</span><br><span class="line">            <span class="keyword">if</span> (it != hashtable.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;it-&gt;second, i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            hashtable[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p></p>
+<hr>
 <p></p>
 <h2 id="题7：128-最长连续序列">题7：128. 最长连续序列</h2>
 <p></p>
@@ -477,99 +594,181 @@
 </li>
 </ul>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="https://ericlie-c.github.io/2025/01/22/%E4%B8%80%E6%97%A5%E4%BA%8C%E5%8D%81%E9%A2%98/" data-id="cm67ovtqo00025kp6hadodddd" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">一日二十题 Day 1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%981%EF%BC%9A57-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4"><span class="nav-number">1.1.</span> <span class="nav-text">题1：57. 插入区间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">题解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%982-%EF%BC%9A54-%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.</span> <span class="nav-text">题2 ：54. 螺旋矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-2"><span class="nav-number">1.2.1.</span> <span class="nav-text">题解：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E6%B3%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">模拟法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%983%EF%BC%9A48-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F"><span class="nav-number">1.3.</span> <span class="nav-text">题3：48. 旋转图像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-3"><span class="nav-number">1.3.1.</span> <span class="nav-text">题解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%984%EF%BC%9A289-%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F"><span class="nav-number">1.4.</span> <span class="nav-text">题4：289. 生命游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-4"><span class="nav-number">1.4.1.</span> <span class="nav-text">题解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%985%EF%BC%9A-49-%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84"><span class="nav-number">1.5.</span> <span class="nav-text">题5： 49. 字母异位词分组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-5"><span class="nav-number">1.5.1.</span> <span class="nav-text">题解：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8-%E6%8E%92%E5%BA%8F"><span class="nav-number">1.5.2.</span> <span class="nav-text">方法二：哈希表+排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89%EF%BC%9A%E5%AD%97%E6%AF%8D%E8%A1%A8%E7%BB%9F%E8%AE%A1%E5%AD%97%E9%A2%91"><span class="nav-number">1.5.3.</span> <span class="nav-text">方法三：字母表统计字频</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%986%EF%BC%9A1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.6.</span> <span class="nav-text">题6：1. 两数之和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-6"><span class="nav-number">1.6.1.</span> <span class="nav-text">题解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%987%EF%BC%9A128-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97"><span class="nav-number">1.7.</span> <span class="nav-text">题7：128. 最长连续序列</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Eric Lie</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eric Lie</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
     </footer>
   </div>
-  
-    
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
   
-    
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li></ul>
-    </div>
-  </div>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/01/22/%E4%B8%80%E6%97%A5%E4%BA%8C%E5%8D%81%E9%A2%98/">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2025 Eric Lie<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+<script src="/js/schemes/muse.js"></script>
 
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+<script src="/js/next-boot.js"></script>
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
 
 
 
 
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
 </body>
 </html>
